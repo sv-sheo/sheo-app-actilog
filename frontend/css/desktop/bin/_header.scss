@@ -1,0 +1,432 @@
+
+.content_header {
+
+	display:			block;
+	/*border-left:		1px groove $dark_color_3;*/
+	z-index:			50;
+
+}
+
+.header_row {
+
+	background:			$dark_color;
+	color:				$light_color;
+
+}
+
+.control_row {
+
+	background:			$light_color;
+	color:				$dark_color_2;
+
+}
+
+.column_row, .units_row, .filter_row, .control_row_summaries {
+
+	display: grid;
+	grid-template-rows: 	auto;
+	column-gap: 			0px;
+	row-gap: 				10px;
+	justify-items:			stretch;
+	align-items:			stretch;
+	justify-content: 		start;
+	align-content: 			start;
+
+}
+
+.column_row {
+
+	font-size:				12pt;
+	font-weight:			bold;
+	line-height:			$content_row_height - 2px;
+
+	.hell_content { 
+		
+		padding:			2px 0.6em 0 0.6em; 
+		cursor: 			pointer;
+	
+	}
+
+}
+
+.control_row {
+
+	border-bottom: 			2px groove $dark_color;
+
+	.control_row_summaries {
+
+		font-weight:			bold;
+
+		.hell_content { 
+
+			border-right:		none;
+			box-shadow: 		inset 0px 0px 2px 0px #ddd;
+			padding:			4px 0.6em 0px 0.6em; 
+			line-height:		26px;
+
+		}
+
+	}
+
+}
+
+.units_row {
+
+	font-size:				10pt;
+	line-height:			20px;
+
+	.hell_content { padding:0px 0.6em 4px 0.6em; }
+
+}
+
+/* header cell */
+.hell { 
+
+	overflow:				hidden;
+	white-space: 			nowrap;
+
+}
+
+.hell_content, .filter_warp {
+
+	border-right: 			1px ridge $dark_color_2;
+	height:					100%;
+
+}
+
+.hc_button {
+
+	position:				relative;
+	top:					-2px;
+	height:					24px;
+	border-radius: 			4px;
+	box-sizing: 			border-box;
+	color: 					$light_color;
+	cursor: 				pointer;
+	font-weight: 			bold;
+	font-size: 				14px;
+	line-height:			14px;
+	padding: 				0px 12px;
+	vertical-align:  		middle;
+	text-align: 			center;
+	user-select: 			none;
+	-webkit-user-select: 	none;
+	touch-action: 			manipulation;
+	white-space: 			nowrap;
+	//margin-right: 			1em;
+
+	&_add {
+
+		background-image: 	linear-gradient($theme_color_lighter_2, $theme_color);
+		border: 			1px solid $theme_color;
+
+		&:hover {
+			background-image: 	linear-gradient($theme_color_lighter, $theme_color_darker);
+			border-color:  		$theme_color_darker;
+			text-decoration: 	none;
+		}
+	
+		&:active {
+			background-image: 	linear-gradient($theme_color_lighter,  $theme_color_darker);
+			border-color:  		$theme_color_darker;
+			outline:			none;
+		}
+
+	}
+
+	&_cancel {
+
+		background-image: 	linear-gradient($error_color_lighter_2, $error_color);
+		border: 			1px solid $error_color;
+
+		&:hover {
+		//	background-image: 	linear-gradient($error_color_lighter, $error_color_darker);
+		//	border-color:  		$error_color_darker;
+			text-decoration: 	none;
+		}
+	
+		&:active {
+		//	background-image: 	linear-gradient($error_color_lighter,  $error_color_darker);
+		//	border-color:  		$error_color_darker;
+			outline:			none;
+		}
+
+	}
+
+
+	&:disabled {
+
+		cursor:				no-drop;
+		opacity: 			0.3;
+
+	}
+
+	&:focus {
+		box-shadow: rgba(100, 100, 100, 0.5) 0 0 1px 1px;
+		outline: none;
+	}
+
+}
+
+/*___________________________ACTIVITIES__________________________*/
+
+.activities_header > .header_row {
+
+	min-width:				850px;
+
+}
+
+.activities_column, .activities_units, .activities_filter {
+
+	grid-template-columns: 	$activities_table_cols;
+	grid-template-areas:	$activities_table_areas;
+
+	.hell { 
+	
+		&_date 			{ grid-area:	date; 			}
+		&_category		{ grid-area:	category;		}
+		&_project 		{ grid-area:	project;		}
+		&_activity		{ grid-area:	activity; 		}
+		&_investor 		{ grid-area:	investor; 		}
+		&_source 		{ grid-area:	source; 		}
+		&_time			{ grid-area:	time; 			text-align: center;}
+		&_efficiency	{ grid-area:	efficiency; 	text-align: center;}
+		&_eff_time		{ grid-area:	eff_time; 		text-align: center;}
+		&_expected_yield{ grid-area:	expected_yield; text-align: center;}
+		&_actual_yield	{ grid-area:	actual_yield; 	text-align: center;}
+	
+	}
+
+}
+
+.activities_control_summaries {
+
+	grid-template-columns: 	$activities_table_cols;
+	grid-template-areas:	$activities_table_areas;
+
+	.hell { 
+	
+		&_date 			{ grid-area:	date; 			}
+		&_category		{ grid-area:	category;		}
+		&_project 		{ grid-area:	project;		}
+		&_activity		{ grid-area:	activity; 		}
+		&_investor 		{ grid-area:	investor; 		}
+		&_source 		{ grid-area:	source; 		text-align: right;}
+		&_time			{ grid-area:	time; 			text-align: right;}
+		&_efficiency	{ grid-area:	efficiency; 	text-align: right;}
+		&_eff_time		{ grid-area:	eff_time; 		text-align: right;}
+		&_expected_yield{ grid-area:	expected_yield; text-align: right;}
+		&_actual_yield	{ grid-area:	actual_yield; 	text-align: right;}
+	
+	}
+
+	.hell_category { overflow: visible !important;}
+
+}
+
+/*___________________________PROJECTS__________________________*/
+
+.projects_header > .header_row {
+
+	min-width:				850px;
+
+}
+
+.projects_column, .projects_units, .projects_filter {
+
+	grid-template-columns: 	$projects_table_cols;
+	grid-template-areas:	$projects_table_areas;
+
+	.hell { 
+	
+		&_year 			{ grid-area:	year; 			text-align: center;}
+		&_n 			{ grid-area:	n;				text-align: center;}
+		&_name 			{ grid-area:	name; 			}
+		&_category 		{ grid-area:	category; 		}
+		&_investor 		{ grid-area:	investor; 		}
+		&_activities	{ grid-area:	activities; 	text-align: right;}
+		&_time			{ grid-area:	time_spent; 	text-align: center;}
+		&_efficiency	{ grid-area:	efficiency; 	text-align: center;}
+		&_eff_time		{ grid-area:	eff_time_spent; text-align: center;}
+		&_expected_yield{ grid-area:	expected_yield; text-align: center;}
+		&_paid			{ grid-area:	paid; 			}
+		&_actual_yield	{ grid-area:	actual_yield; 	text-align: center; }
+		&_finished		{ grid-area:	finished; 		text-align: center; }
+	
+	}
+
+}
+
+.projects_control_summaries {
+
+	grid-template-columns: 	$projects_table_cols;
+	grid-template-areas:	$projects_table_areas;
+
+	.hell { 
+	
+		&_year 			{ grid-area:	year; 			text-align: center;}
+		&_n 			{ grid-area:	n;				text-align: center;}
+		&_name 			{ grid-area:	name; 			}
+		&_category 		{ grid-area:	category; 		}
+		&_investor 		{ grid-area:	investor; 		text-align: right;}
+		&_activities	{ grid-area:	activities; 	text-align: right;}
+		&_time			{ grid-area:	time_spent; 	text-align: right;}
+		&_efficiency	{ grid-area:	efficiency; 	text-align: right;}
+		&_eff_time		{ grid-area:	eff_time_spent; text-align: right;}
+		&_expected_yield{ grid-area:	expected_yield; text-align: right;}
+		&_paid			{ grid-area:	paid; 			}
+		&_actual_yield	{ grid-area:	actual_yield; 	text-align: right; }
+		&_finished		{ grid-area:	finished; 		text-align: right; }
+	
+	}
+
+}
+
+
+/*___________________________CATEGORIES__________________________*/
+
+.categories_header > .header_row {
+
+	min-width:				850px;
+
+}
+
+.categories_column, .categories_units, .categories_filter {
+
+	grid-template-columns: 	$categories_table_cols;
+	grid-template-areas:	$categories_table_areas;
+
+	.hell { 
+	
+		&_id 			{ grid-area:	id;				text-align: center;}
+		&_name 			{ grid-area:	name; 			}
+		&_projects 		{ grid-area:	projects; 		text-align: center;}
+		&_activities 	{ grid-area:	activities; 	text-align: center;}
+		&_time			{ grid-area:	time_spent; 	text-align: center;}
+		&_efficiency	{ grid-area:	efficiency; 	text-align: center;}
+		&_eff_time		{ grid-area:	eff_time_spent; text-align: center;}
+		&_expected_yield{ grid-area:	expected_yield; text-align: center;}
+		&_actual_yield	{ grid-area:	actual_yield; 	text-align: center; }
+	
+	}
+
+}
+
+.categories_control_summaries {
+
+	grid-template-columns: 	$categories_table_cols;
+	grid-template-areas:	$categories_table_areas;
+
+	.hell { 
+	
+		&_id 			{ grid-area:	id;				text-align: center;}
+		&_name 			{ grid-area:	name; 			}
+		&_projects 		{ grid-area:	projects; 		text-align: center;}
+		&_activities 	{ grid-area:	activities; 	text-align: center;}
+		&_time			{ grid-area:	time_spent; 	text-align: right;}
+		&_efficiency	{ grid-area:	efficiency; 	text-align: right;}
+		&_eff_time		{ grid-area:	eff_time_spent; text-align: right;}
+		&_expected_yield{ grid-area:	expected_yield; text-align: right;}
+		&_actual_yield	{ grid-area:	actual_yield; 	text-align: right; }
+	
+	}
+
+}
+
+
+/*___________________________INVESTORS__________________________*/
+
+.investors_column, .investors_units, .investors_filter {
+
+	grid-template-columns: 	$investors_table_cols;
+	grid-template-areas:	$investors_table_areas;
+
+	.hell { 
+	
+		&_id 			{ grid-area:	id;				text-align: center;}
+		&_name 			{ grid-area:	name; 			}
+		&_address 		{ grid-area:	address; 		}
+		&_projects 		{ grid-area:	projects; 		text-align: center;}
+		&_activities 	{ grid-area:	activities; 	text-align: center;}
+		&_time			{ grid-area:	time_spent; 	text-align: center;}
+		&_efficiency	{ grid-area:	efficiency; 	text-align: center;}
+		&_eff_time		{ grid-area:	eff_time_spent; text-align: center;}
+		&_expected_yield{ grid-area:	expected_yield; text-align: center;}
+		&_actual_yield	{ grid-area:	actual_yield; 	text-align: center; }
+	
+	}
+
+}
+
+.investors_control_summaries {
+
+	grid-template-columns: 	$investors_table_cols;
+	grid-template-areas:	$investors_table_areas;
+
+	.hell { 
+	
+		&_id 			{ grid-area:	id;				text-align: center;}
+		&_name 			{ grid-area:	name; 			}
+		&_address		{ grid-area:	address; 		}
+		&_projects 		{ grid-area:	projects; 		text-align: center;}
+		&_activities 	{ grid-area:	activities; 	text-align: center;}
+		&_time			{ grid-area:	time_spent; 	text-align: right;}
+		&_efficiency	{ grid-area:	efficiency; 	text-align: right;}
+		&_eff_time		{ grid-area:	eff_time_spent; text-align: right;}
+		&_expected_yield{ grid-area:	expected_yield; text-align: right;}
+		&_actual_yield	{ grid-area:	actual_yield; 	text-align: right; }
+	
+	}
+
+}
+
+/*___________________________SOURCES__________________________*/
+
+.sources_header > .header_row {
+
+	min-width:				850px;
+
+}
+
+.sources_column, .sources_units, .sources_filter {
+
+	grid-template-columns: 	$sources_table_cols;
+	grid-template-areas:	$sources_table_areas;
+
+	.hell { 
+	
+		&_id 			{ grid-area:	id;				text-align: center;}
+		&_name 			{ grid-area:	name; 			}
+		&_projects 		{ grid-area:	projects; 		text-align: center;}
+		&_activities 	{ grid-area:	activities; 	text-align: center;}
+		&_time			{ grid-area:	time_spent; 	text-align: center;}
+		&_efficiency	{ grid-area:	efficiency; 	text-align: center;}
+		&_eff_time		{ grid-area:	eff_time_spent; text-align: center;}
+		&_expected_yield{ grid-area:	expected_yield; text-align: center;}
+		&_actual_yield	{ grid-area:	actual_yield; 	text-align: center; }
+	
+	}
+
+}
+
+.sources_control_summaries {
+
+	grid-template-columns: 	$sources_table_cols;
+	grid-template-areas:	$sources_table_areas;
+
+	.hell { 
+	
+		&_id 			{ grid-area:	id;				text-align: center;}
+		&_name 			{ grid-area:	name; 			}
+		&_projects 		{ grid-area:	projects; 		text-align: center;}
+		&_activities 	{ grid-area:	activities; 	text-align: right;}
+		&_time			{ grid-area:	time_spent; 	text-align: right;}
+		&_efficiency	{ grid-area:	efficiency; 	text-align: right;}
+		&_eff_time		{ grid-area:	eff_time_spent; text-align: right;}
+		&_expected_yield{ grid-area:	expected_yield; text-align: right;}
+		&_actual_yield	{ grid-area:	actual_yield; 	text-align: right; }
+	
+	}
+
+}
+

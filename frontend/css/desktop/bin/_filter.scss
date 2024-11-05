@@ -1,0 +1,69 @@
+
+.filter_warp {
+
+	padding: 			0px 0.6em;
+
+}
+
+.filter_text_input {
+
+	box-sizing: 		border-box;
+	width:				100%;
+	font-size:			10pt;
+	vertical-align:		top;
+
+}
+
+.filter_textarea {
+
+	box-sizing: 		border-box;
+	width:				100%;
+	font-size:			10pt;
+	overflow-x:			hidden;
+
+}
+
+.filter_select {
+
+	box-sizing: 		border-box;
+	width:				100%;
+	font-size:			10pt;
+	vertical-align:		top;
+
+}
+
+.filter_date {
+
+	box-sizing: 		border-box;
+	width:				40px;
+	font-size:			11pt;
+	vertical-align:		top;
+
+}
+
+.sum_date_peek {
+
+	display:			block;
+	font-size:			8px;
+	line-height:		12px;
+	font-weight:		normal;
+
+}
+
+/* ordering */
+.hell_column_order_icon {
+
+	position:			absolute;
+	width:				10px;
+	height:				10px;
+	left:				50%;
+	transform:			translate(-50%, 0px);
+	font-size:			0px;
+	line-height:		0px;
+
+}
+
+	.hcoi_asc { top:	0px;}
+	.hcoi_desc { bottom:0px;}
+
+	.hcoi_img { width: 100%; height: 100%;}

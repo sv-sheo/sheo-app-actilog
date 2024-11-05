@@ -1,0 +1,100 @@
+
+
+.control_row_charts {
+
+	display:		flex;
+	flex-flow:		row nowrap;
+	justify-content:flex-start;	// horizontal left
+	align-items:	flex-start; // vertical top
+	align-content:	flex-start; // vertical top
+	gap:			0px;
+
+
+}
+
+.charts_menu, .charts_content {
+
+}
+
+.charts_menu {
+
+	flex-basis:	auto;
+	padding:	10px 10px 10px 20px;
+
+}
+
+	.charts_menu_header {
+
+		font-size:	16pt;
+		line-height: 24pt;
+
+	}
+
+	.charts_menu_links {}
+	.charts_menu_link {
+
+		& label {
+
+			cursor:		pointer;
+			white-space:nowrap;
+
+			& input {	vertical-align: middle; margin: 0;}
+			& span {	padding-left: 5px; margin: 0;}
+
+		}
+
+	}
+
+.charts_content {
+
+	flex-grow:	1;
+	padding:	10px 20px 10px 10px;
+
+}
+
+	.charts_content_header {
+
+		font-size:		16pt;
+		line-height: 	24pt;
+		min-height:		24pt;
+
+	}
+
+	.charts_items {
+
+		flex-grow:	1;
+		padding:	10px 20px;
+		/*box-shadow: inset 0px 0px 2px 0px blue;*/
+
+		display:		flex;
+		flex-flow: 		row wrap;
+		justify-content:flex-start;	// horizontal left
+		align-items:	flex-start; // vertical top
+		align-content:	flex-start; // vertical top
+		gap:			20px;
+
+	}
+
+		.charts_item {
+
+			.chi_warp {height: 	100%; }
+
+			.chi_header {
+
+				height:			30px;
+				font-size:		20px;
+				line-height: 	30px;
+				text-align: 	center;
+				font-weight:	bold;
+				color:			$theme_color_darker;
+
+
+			}
+
+			.chi_content {
+
+				height:			calc(100% - 30px);
+
+			}
+
+		}

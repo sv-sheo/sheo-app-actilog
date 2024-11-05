@@ -1,0 +1,82 @@
+
+.alert_warp {
+
+    z-index:        200;
+    position:       fixed;
+    top:            0px;
+    width:          0px;
+    height:         0px;
+
+}
+
+.alert_box {
+
+    position:       absolute;
+    left:           50vw;
+    transform:      translate(-50%, 20px);
+    min-width:      600px;
+    min-height:     30px;
+    padding:        12px 60px 12px 20px;
+    color:          $light_color;
+    font-size:      16px;
+    cursor:         pointer;
+    border-radius:  3px;
+
+    background-color: $dark_color;
+
+    animation-duration:                 0.4s;
+    -webkit-animation-duration:         0.4s;
+    
+    animation-timing-function:          ease-in-out;
+    -webkit-animation-timing-function:  ease-in-out;
+
+    animation-iteration-count:          1;
+    -webkit-animation-iteration-count:  1;
+
+    &.alert_slide_down  { animation-name: alert_slide_down; }
+    &.alert_slide_up    { animation-name: alert_slide_up; }
+
+}
+
+        /* https://icons8.com/icons/authors/HaoeM1FtsSVs/undefined/external-becris-lineal-becris/external-mintab-for-ios-becris-lineal-becris */
+
+        .alert_info     { background-color: $info_color; }
+        .alert_success  { background-color: $success_color; }
+        .alert_warning  { background-color: $warning_color; }
+        .alert_error    { background-color: $error_color; }
+
+.alert_box_header {
+
+    display:        block;
+    font-size:      20px;
+    font-weight:    bold;
+
+}
+
+.alert_box_text {
+
+    display:        block;
+    padding-top:    6px;
+
+}
+
+
+
+
+@keyframes alert_slide_down {
+    0%      { opacity: 0.0; transform: translate(-50%, -100%); } 
+    80%     { opacity: 0.8; transform: translate(-50%, 40px); }
+    100%    { opacity: 1.0; transform: translate(-50%, 20px); }
+}
+
+@keyframes alert_slide_up {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, 20px);
+    } 
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -100%);
+    }
+}
+

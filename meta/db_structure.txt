@@ -1,0 +1,139 @@
+﻿
+ASSOCIATED SHEO TABLES:
+
+- souls - all souls
+- apps - 1 item: { "id": 3 , "name": "actilog" , "resource_version": 2 , "type": "public" }
+	
+ACTILOG TABLES
+
+- actilog
+- actilog_activities
+- actilog_categories
+- actilog_investors
+- actilog_projects
+- actilog_settings
+- actilog_sources
+
+
+	TABLE actilog STRUCTURE:
+
+	item = {
+			"app_id": 3 ,
+			"id": 2 ,
+			"rights": {
+				"read": "limited" , // public | limited | private
+				"read_limiters": {
+					"link": "ch6biezd79oyltgi3iilkv9cj57kmcdd4yzvtg" ,
+					"souls": { "2": 2 }
+				} ,
+				"write": "private" ,
+				"write_limiters": { "link": "" , "souls": { } } 
+			} ,
+			"soul_id": 1
+		}
+
+	indexes: "app_id", "soul_id" // r.db('sheo').table('actilog').indexList()  // .indexCreate(name)  //  .indexDrop(name)
+
+_______________________________________________________________________________________________________________________________
+
+	TABLE actilog_activities STRUCTURE:
+
+	item = {
+			"actilog_id": 	3 ,
+			"id": 		2 ,
+			"activity": 	"text"
+			"clock": 	"qw" ,
+			"date": 	1652272620000 , // ms since 1970
+			"description": 	"qwe" ,
+			"eff_time":	2 ,
+			"project_id": 	3 ,
+			"soul_id": 	1 ,
+			"time": 	6
+		}
+
+	indexes: "actilog_id"
+
+_______________________________________________________________________________________________________________________________
+
+	TABLE actilog_categories STRUCTURE:
+
+	item = {
+			"actilog": 	3 ,
+			"id": 		2 ,
+			"name": 	"text"
+			"soul": 	1 ,
+		}
+
+	indexes: "actilog"
+
+_______________________________________________________________________________________________________________________________
+
+	TABLE actilog_investors STRUCTURE:
+
+	item = {
+			"actilog": 	3 ,
+			"id": 		2 ,
+			"soul": 	1 ,
+			"email": 	"" ,
+			"name": 	"text"
+			"phone": 	"" ,
+			"address": 	"" ,
+		}
+
+	indexes: "actilog"
+
+_______________________________________________________________________________________________________________________________
+
+	TABLE actilog_projects STRUCTURE:
+
+	item = {
+			"actilog_id": 	3 ,
+			"id": 		2 ,
+			"soul_id": 	1 ,
+			"actual_yield": 0 ,
+			"category": 	3 ,
+			"source": 	3,
+			"investor": 	2 ,
+			"date": 	1657275540000 ,
+			"description": 	"ccc" ,
+			"expected_hourly_yield": 0 ,
+			"finished": 	false ,
+			"n": 3 ,
+			"name": 	"CCC" ,
+			"paid":		false ,
+
+
+
+		}
+
+	indexes: "actilog_id"
+
+_______________________________________________________________________________________________________________________________
+
+	TABLE actilog_sources STRUCTURE:
+
+	item = {
+			"actilog": 	3 ,
+			"id": 		2 ,
+			"name": 	"text",
+			"soul": 	1 ,
+		}
+
+	indexes: "actilog"
+
+_______________________________________________________________________________________________________________________________
+
+	TABLE actilog_settings STRUCTURE:
+
+	item = {
+			"actilog_id": 	3 ,
+			"id": 		2 ,
+			
+			"units": { "currency": "CZK" , "time": "h" } ,
+			"values": { "price_decimals": 0 , "time_spent_decimals": 2 },
+			"other": { "download_years": 2}
+		}
+
+	indexes: "actilog_id"
+
+_______________________________________________________________________________________________________________________________

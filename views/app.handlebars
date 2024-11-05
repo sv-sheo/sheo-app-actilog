@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<!-- CONTENTS OF Q.data is available here -->
+
+<html lang="{{locale}}">
+
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="robots" content="noindex, nofollow">
+        <meta name=”description” content=”Actilog - Activity Log App - Log Your Activities - Sheo”>
+        <meta name="author" content="SHEO">
+        <link rel="icon" href="{{HOST}}files/get/icons/logo/theme.png">
+        
+        <title>{{html_title}}</title>
+        
+        <script src="{{HOST}}files/get/js/desktop_preload.js?v={{resource_version}}"></script>
+        <link  href="{{HOST}}files/get/css/desktop_preload.css?v={{resource_version}}"  type="text/css" rel="stylesheet">
+
+        <script src="{{webpack_url}}desktop.js?v={{resource_version}}"></script>
+        <link href="{{webpack_url}}desktop.css?v={{resource_version}}" type="text/css" rel="stylesheet">
+
+        
+    </head>
+    
+    <body data-language="{{language}}">
+  
+        <div id="slock">
+
+            <div id="no_javascript">
+
+                <div id="warp" class="actilog">
+
+                    <div class="ribbon">
+
+                        <div class="ribbon_bg"></div>
+                        <div class="ribbon_header">ACTIVITY LOG</div>
+
+                    </div>
+
+                    <nav class="menu">
+
+                        <div class="menu_bg"></div>
+
+                    </nav>
+
+                    <main class="content">
+
+                        <div id="no_js_content">
+
+                            <div id="no_js_header">{{view_data.header}}</div>
+                            <div id="no_js_text">{{{view_data.text}}}</div>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+            </div>
+
+        </div>
+        
+        <div id="jtr5g6t8fdg52hre58rq" class="alert-box-7"><div style="display: none;" id="server_data">
+            
+            <script src='https://www.google.com/recaptcha/api.js' async defer ></script>
+            <script> var PRELOAD_DATA = {{{PRELOAD_DATA}}}</script>
+        
+        </div></div>
+        
+    </body>
+    
+</html>

@@ -1,0 +1,139 @@
+
+.ribbon {
+
+	position:			fixed;
+	width:				100%;
+	min-width:			$min_width;
+
+	height: 			$ribbon_height + 5px;
+	background-color: 	$theme_color;
+	padding-top:		5px;
+	z-index:			80;
+
+	color: 				$light_color;
+
+	box-shadow: 		0px 2px 8px 0px $dark_color_2;
+
+}
+
+.ribbon_header {
+
+	@extend				.absolute;
+	width: 				$menu_width;
+	font-size: 			20px;
+	line-height: 		$ribbon_height;
+	padding: 			5px 20px 0 20px;
+
+}
+
+.ribbon_bg {
+
+	@extend 			.absolute;
+	background-image: 	url("/files/get/images/ribbon.jpg");
+    background-repeat: 	no-repeat;
+    background-size: 	cover;
+    background-position:center;
+    opacity: 			0.5;
+
+}
+
+.ribbon_account {
+
+	float: 				right;
+	font-size: 			16px;
+	height: 			$ribbon_height;
+
+	/*width: 300px;
+	border-right: 1px solid $light_color;*/
+
+}
+
+		.ra_warp {
+
+			opacity:	0.95;
+			cursor:		pointer;
+			color: 		$light_color;
+
+			&:hover { opacity: 1; }
+
+		}
+
+		.ra_avatar { 
+			
+			display: 	inline-block;
+			padding:	8px;
+			height:		$ribbon_height;
+		
+		}
+			.ra_avatar_img {
+
+				width:		24px;
+				height: 	24px;
+
+			}
+
+		.ra_nick { 
+			
+			display: 	inline-block;
+			padding:	12px 10px 9px 5px;
+		
+		}
+
+
+.ribbon_languages {
+
+	float: right;
+
+	/*position:			absolute;
+	top:				0px;
+	right:				0px;*/
+	overflow: 			hidden;
+	font-size: 			16px;
+	z-index:			80;
+
+}
+
+		.rl_current_language {
+
+			width: 			100%;
+			text-align: 	right;
+			padding: 		0 20px;
+			height: 		$ribbon_height;
+			cursor:			pointer;
+			opacity:		0.95;
+			transition:		opacity 250ms;
+
+			&:hover { opacity: 1; }
+
+		}
+
+		.ribbon_language_select {
+
+			display:		block;
+			transition:		transform 250ms;
+
+		}
+
+			.rls_warp 	{ padding:		10px 20px; }
+			.rls_hidden { transform: 	translate(100%,0px) }
+			.rls_visible{ transform: 	translate(0%,0px) }
+
+			.rls_button {
+
+				color:			$theme_color;
+				opacity:		0.95;
+				cursor:			pointer;
+				line-height: 	30px;
+				text-align:		right;
+
+				&:hover { opacity: 1; }
+
+			}
+
+			.rls_background {
+
+				@extend 		.absolute;
+				background:		$light_color;
+				opacity:		0.95;
+
+			}

@@ -1,0 +1,77 @@
+
+@font-face { font-family: cinzel; src: url(/files/get/fonts/cinzel/Cinzel-Regular.ttf); }
+
+@import './../common/index';
+@import 'mixins';
+@import 'extends';
+@import 'config';
+/*@import 'base64';
+@import 'animations';
+@import 'slocks/index';
+@import 'vendor/pell';
+@import 'vendor/pannellum';
+@import 'cms/index';
+@import 'hp/index';
+@import 'hp/other';
+@import 'cp/index';*/
+
+body, html {
+    
+    padding:        0 !important; 
+    margin:         0 !important; 
+    font-size:      $default_font_size;
+    /*line-height:    15px; // 1.5x font size*/
+    font-family:    "Myriad Pro", Verdana;
+    
+}
+
+div {
+    
+    position:       relative;
+    vertical-align: top;
+    padding:        0;
+    margin:         0;
+    box-sizing:     border-box;
+    
+}
+
+#slock {
+    
+    position:       static;
+    display:        block;
+    margin:         0 auto;
+    min-width:      $min_width;
+    width:          100%;
+    height:         100%;
+    
+}
+
+.actilog {
+
+    position:       static;
+    display:        block;
+    width:          100%;
+    height:         100%;
+
+}
+
+._ {
+
+    display:        inline-block;
+
+}
+
+@import 'bin/alert';
+@import 'bin/ribbon';
+@import 'bin/menu';
+@import 'bin/content';
+@import 'bin/header';
+@import 'bin/filter';
+@import 'bin/forms';
+@import 'bin/charts';
+@import 'bin/settings';
+
+
+
+
+

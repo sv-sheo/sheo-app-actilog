@@ -1,0 +1,334 @@
+/*<form className="content_form projects_form">
+
+<div className="form_row form_row_projects">
+	<div className="fr_label fr_projects_label">{l.project.n}</div>
+	<div className="fr_input fr_projects_input"><input type="number" min="1" max="999999" name="n" value={form_data.n} onChange={handle_change} /></div>
+</div>
+
+<div className="form_row form_row_projects">
+	<div className="fr_label fr_projects_label">{l.project.date}</div>
+	<div className="fr_input fr_projects_input"><input type="date" min="1" max="999999" name="date" value={form_data.date} onChange={handle_change} /></div>
+</div>*/
+
+.content_form {
+
+	display:	block;
+	padding:	20px 0;
+
+	input, textarea, select {
+
+		box-sizing: border-box;
+
+	}
+
+}
+
+	.form_row {
+
+		display:	block;
+
+	}
+
+	.fr_ {
+
+		display:		inline-block;
+		width:			200px;
+		padding:		0 0.6em;
+		font-size:		14px;
+		line-height:	14px;
+		vertical-align: text-bottom;
+
+	}
+
+		.fr_label {
+			
+			@extend .fr_;
+
+			text-align:		right;
+
+		}
+
+		.fr_error {
+
+			@extend .fr_;
+			
+			color:			$error_color;
+			max-width:		200px;
+
+		}
+
+		.fr_units {
+
+			@extend .fr_;
+			
+			max-width:		30px;
+
+		}
+
+		.fr_submit_error {
+
+			display:		block;
+			color:			$error_color;
+			font-weight:	bold;
+			padding-top: 	10px;
+
+			& > div { font-size: 14px; line-height: 20px; }
+
+		}
+
+		.fr_header {
+
+			@extend .fr_;
+
+			font-size:		20px;
+			line-height:	20px;
+			font-weight:	bold;
+			padding:		0 0 8px 0;
+			width:			auto;
+			max-width:		400px;
+
+
+		}
+
+		.fr_input {
+
+			display:		inline-block;
+			max-width:		400px;
+
+			& input, & textarea, & select {
+
+				font-size: 		14px;
+				font-family:	Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+
+			}
+
+			&_text {
+
+				width:		220px;
+				padding: 	2px 0.6em;
+
+			}
+
+			&_textarea {
+
+				min-width:	220px;
+				max-width:	100%;
+				width:		220px;
+				padding: 	3px 0.6em;
+
+			}
+
+			
+			&_number {
+
+				min-width:	120px;
+				text-align:	right;
+				padding: 	2px 0.6em;
+
+			}
+
+			&_date {
+
+				width:		220px;
+				padding: 	2px 0.6em;
+
+			}
+			
+			&_select {
+
+				min-width:	220px;
+				padding: 	2px 0.6em;
+
+			}
+
+			&_checkbox {
+
+				display: inline-block;
+
+			}
+
+		}
+
+
+/* __________________PROJECTS_______________________*/
+.projects_form {
+
+	display:	block;
+
+}
+
+/*________________________BUTTONS_____________________________*/
+
+.btn {
+
+	position:				relative;
+	box-sizing: 			border-box;
+	color: 					$light_color;
+	cursor: 				pointer;
+	font-weight: 			bold;
+	vertical-align:  		middle;
+	text-align: 			center;
+	user-select: 			none;
+	-webkit-user-select: 	none;
+	touch-action: 			manipulation;
+	white-space: 			nowrap;
+
+	&_12 {@include 			btn_sizes(12px); }
+	&_15 {@include 			btn_sizes(15px); }
+	&_16 {@include 			btn_sizes(16px); }
+	&_20 {@include 			btn_sizes(20px); }
+	&_24 {@include 			btn_sizes(24px); }
+	&_25 {@include 			btn_sizes(25px); }
+	&_28 {@include 			btn_sizes(28px); }
+	&_30 {@include 			btn_sizes(30px); }
+	&_36 {@include 			btn_sizes(36px); }
+
+	&_theme {
+
+		background-image: 		linear-gradient($theme_color_lighter_2, $theme_color);
+		border: 				1px solid $theme_color;
+		&:hover {
+			background-image: 	linear-gradient($theme_color_lighter, $theme_color_darker);
+			border-color:  		$theme_color_darker;
+			text-decoration: 	none;}
+		&:active {
+			background-image: 	linear-gradient($theme_color_lighter,  $theme_color_darker);
+			border-color:  		$theme_color_darker;
+			outline:			none;}
+
+	}
+
+	&_error {
+
+		background-image: 		linear-gradient($error_color_lighter_2, $error_color);
+		border: 				1px solid $error_color;
+		&:hover {
+			background-image: 	linear-gradient($error_color_lighter, $error_color_darker);
+			border-color:  		$error_color_darker;
+			text-decoration: 	none;}
+		&:active {
+			background-image: 	linear-gradient($error_color_lighter,  $error_color_darker);
+			border-color:  		$error_color_darker;
+			outline:			none;}
+
+	}
+
+	&_success {
+
+		background-image: 		linear-gradient($success_color_lighter_2, $success_color);
+		border: 				1px solid $success_color;
+		&:hover {
+			background-image: 	linear-gradient($success_color_lighter, $success_color_darker);
+			border-color:  		$success_color_darker;
+			text-decoration: 	none;}
+		&:active {
+			background-image: 	linear-gradient($success_color_lighter,  $success_color_darker);
+			border-color:  		$success_color_darker;
+			outline:			none;}
+
+	}
+	&_info {
+
+		background-image: 		linear-gradient($info_color_lighter_2, $info_color);
+		border: 				1px solid $info_color;
+		&:hover {
+			background-image: 	linear-gradient($info_color_lighter, $info_color_darker);
+			border-color:  		$info_color_darker;
+			text-decoration: 	none;}
+		&:active {
+			background-image: 	linear-gradient($info_color_lighter,  $info_color_darker);
+			border-color:  		$info_color_darker;
+			outline:			none;}
+
+	}
+	&_warning {
+
+		background-image: 		linear-gradient($warning_color_lighter_2, $warning_color);
+		border: 				1px solid $warning_color;
+		&:hover {
+			background-image: 	linear-gradient($warning_color_lighter, $warning_color_darker);
+			border-color:  		$warning_color_darker;
+			text-decoration: 	none;}
+		&:active {
+			background-image: 	linear-gradient($warning_color_lighter,  $warning_color_darker);
+			border-color:  		$warning_color_darker;
+			outline:			none;}
+
+	}
+
+
+	&:disabled {
+
+		cursor:				no-drop;
+		opacity: 			0.3;
+
+	}
+
+	&:focus {
+		box-shadow: rgba(100, 100, 100, 0.5) 0 0 1px 1px;
+		outline: none;
+	}
+
+}
+
+
+/*_______________________OTHER___________________________*/
+.content_remove_btn_select {
+	
+	min-width:		100px;
+	max-width: 		200px;
+	padding: 		2px 0.6em;
+	display:		block;
+	font-size: 		14px;
+	border-radius:  4px;
+	margin-top: 	2px;
+	box-sizing:		border-box;
+
+}
+
+.content_remove_btn_result {
+
+	padding-top:	12px;
+	font-size: 		14px;
+	line-height:	1.4;
+
+	&_text {}
+	&_error { color: $error_color; font-weight: bold;}
+
+}
+
+/* ______________INPU STATUS______________*/
+
+.input_status {
+
+	display: 	block;
+	height:		100%;
+
+}
+
+	.is_icon {
+
+		display:		inline-block;
+		height:			80%;
+		vertical-align: sub;
+
+		& > img {
+
+			position: 	relative;
+			height: 	100%;
+
+		}
+
+	}
+
+	.is_text {
+
+		display:	inline-block;
+		padding:	0 10px;
+
+		&_error { color: $error_color; }
+		&_success { color: $success_color; }
+		&_info { color: $dark_color_2; }
+		&_loading { color: $dark_color_2; }
+
+	}

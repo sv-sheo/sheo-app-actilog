@@ -1,0 +1,292 @@
+
+.content {
+
+	position:			relative;
+	top: 				$ribbon_height + 5px;
+	left:				$menu_width;
+	min-height: 		calc(100vh - $ribbon_height - 5px);
+	width:				calc(100% - $menu_width);
+	color:				$dark_color_2;
+	background:			$light_color;
+	font-size:			14px;
+	line-height:		30px;
+	overflow:			auto;
+
+}
+
+.item_warp {
+
+	border-bottom: 			2px groove $dark_color;
+	transition: 			background 200ms;
+
+	&:nth-child(odd) { 	background: $light_color_2;}
+
+	&:hover { 			background: $light_color_3;}
+
+}
+
+.row {
+
+	/*@include flexbox();
+	flex-flow: row nowrap;*/
+
+	display: grid;
+	grid-template-rows: 	auto;
+	column-gap: 			0px;
+	row-gap: 				10px;
+	justify-items:			stretch;
+	align-items:			stretch;
+	justify-content: 		start;
+	align-content: 			start;
+	font-size:				11pt;
+	cursor:					pointer;
+
+	&_icon { height: 		28px; }
+
+}
+
+.cell { 
+
+	box-shadow: 			inset 0px 0px 2px 0px #ddd;
+	height:					$content_row_height;
+	overflow:				hidden;
+	white-space: 			nowrap;
+
+}
+
+	.cell_content {
+
+		padding:			2px 0.6em 0 0.6em;
+		line-height:		$content_row_height - 2px;
+		height:				100%;
+
+	}
+
+
+.item_detail {
+
+	padding:				12px 20px;
+	border-top:				1px solid #ccc;
+
+	& .id_column {
+
+		display:			inline-block;
+		width:				360px;
+		padding:			12px 0px;
+		margin-right:		20px;
+
+	}
+
+	& .id_row {
+
+		display:			block;
+		font-size:			0px;
+
+		&_header {
+
+			font-size:		11pt;
+			line-height:	17pt;
+			display:		inline-block;
+			text-align:		right;
+			width:			150px;
+			padding:		6px 6px;
+			font-weight:	bold;
+
+		}
+
+		&_content {
+
+			display:		inline-block;
+			font-size:		11pt;
+			line-height:	17pt;
+			width:			210px;
+			padding:		6px 6px;
+
+			& .row_icon {height: 24px; vertical-align: middle;}
+
+		}
+
+		&_buttons {
+
+			display:		inline-block;
+			font-size:		11pt;
+			line-height:	17pt;
+			min-width:		320px;
+			padding:		6px 6px;
+			/*height:			28px;*/
+
+			& .id_rm_button_warp { display: block;}
+			& .id_rm_button { display: inline-block; margin-right: 6px;}
+			& .id_rm_button_result { display: inline-block; max-width: 360px;}
+
+		}
+
+	}
+
+}
+
+/*___________________________ACTIVITIES__________________________*/
+
+.item_warp_activities {
+
+	min-width:				850px;
+
+}
+
+.activities_row {
+
+	grid-template-columns: 	$activities_table_cols;
+	grid-template-areas:	$activities_table_areas;
+
+	.cell { 
+	
+		&_date 			{ grid-area:	date; 			text-align: right;}
+		&_category		{ grid-area:	category;		}
+		&_project 		{ grid-area:	project;		}
+		&_activity		{ grid-area:	activity; 		}
+		&_investor 		{ grid-area:	investor; 		}
+		&_source 		{ grid-area:	source; 		}
+		&_time			{ grid-area:	time; 			text-align: right;}
+		&_efficiency	{ grid-area:	efficiency; 	text-align: right;}
+		&_eff_time		{ grid-area:	eff_time; 		text-align: right;}
+		&_expected_yield{ grid-area:	expected_yield; text-align: right;}
+		&_actual_yield	{ grid-area:	actual_yield; 	text-align: right; }
+	
+	}
+
+}
+
+.activities_body { }
+
+
+/*___________________________PROJECTS__________________________*/
+
+.item_warp_projects {
+
+	min-width:				850px;
+
+}
+
+.projects_row {
+
+	grid-template-columns: 	$projects_table_cols;
+	grid-template-areas:	$projects_table_areas;
+
+	.cell { 
+	
+		&_year 			{ grid-area:	year; 			}
+		&_n 			{ grid-area:	n;				text-align: center; }
+		&_name 			{ grid-area:	name; 			}
+		&_category 		{ grid-area:	category; 		}
+		&_investor 		{ grid-area:	investor; 		}
+		&_activities	{ grid-area:	activities; 	text-align: right;}
+		&_time			{ grid-area:	time_spent; 	text-align: right;}
+		&_efficiency	{ grid-area:	efficiency; 	text-align: right;}
+		&_eff_time		{ grid-area:	eff_time_spent; text-align: right;}
+		&_expected_yield{ grid-area:	expected_yield; text-align: right;}
+		&_paid			{ grid-area:	paid; 			text-align: center;}
+		&_actual_yield	{ grid-area:	actual_yield; 	text-align: right; }
+		&_finished		{ grid-area:	finished; 		text-align: center; }
+	
+	}
+
+}
+
+.projects_body { }
+
+
+/*___________________________CATEGORIES__________________________*/
+
+.item_warp_categories {
+
+	min-width:				850px;
+
+}
+
+.categories_row {
+
+	grid-template-columns: 	$categories_table_cols;
+	grid-template-areas:	$categories_table_areas;
+
+	.cell { 
+	
+		&_id 			{ grid-area:	id;				text-align: center;}
+		&_name 			{ grid-area:	name; 			}
+		&_projects 		{ grid-area:	projects; 		text-align: right;}
+		&_activities 	{ grid-area:	activities; 	text-align: right;}
+		&_time			{ grid-area:	time_spent; 	text-align: right;}
+		&_efficiency	{ grid-area:	efficiency; 	text-align: right;}
+		&_eff_time		{ grid-area:	eff_time_spent; text-align: right;}
+		&_expected_yield{ grid-area:	expected_yield; text-align: right;}
+		&_actual_yield	{ grid-area:	actual_yield; 	text-align: right; }
+	
+	}
+
+}
+
+.categories_body { }
+
+
+
+/*___________________________INVESTORS__________________________*/
+
+.item_warp_investors {
+
+	min-width:				850px;
+
+}
+
+.investors_row {
+
+	grid-template-columns: 	$investors_table_cols;
+	grid-template-areas:	$investors_table_areas;
+
+	.cell { 
+	
+		&_id 			{ grid-area:	id;				text-align: center;}
+		&_name 			{ grid-area:	name; 			}
+		&_address 		{ grid-area:	address; 		}
+		&_projects 		{ grid-area:	projects; 		text-align: right;}
+		&_activities 	{ grid-area:	activities; 	text-align: right;}
+		&_time			{ grid-area:	time_spent; 	text-align: right;}
+		&_efficiency	{ grid-area:	efficiency; 	text-align: right;}
+		&_eff_time		{ grid-area:	eff_time_spent; text-align: right;}
+		&_expected_yield{ grid-area:	expected_yield; text-align: right;}
+		&_actual_yield	{ grid-area:	actual_yield; 	text-align: right; }
+	
+	}
+
+}
+
+.investors_body { }
+
+/*___________________________SOURCES__________________________*/
+
+.item_warp_sources {
+
+	min-width:				850px;
+
+}
+
+.sources_row {
+
+	grid-template-columns: 	$sources_table_cols;
+	grid-template-areas:	$sources_table_areas;
+
+	.cell { 
+	
+		&_id 			{ grid-area:	id;				text-align: center;}
+		&_name 			{ grid-area:	name; 			}
+		&_projects 		{ grid-area:	projects; 		text-align: right;}
+		&_activities 	{ grid-area:	activities; 	text-align: right;}
+		&_time			{ grid-area:	time_spent; 	text-align: right;}
+		&_efficiency	{ grid-area:	efficiency; 	text-align: right;}
+		&_eff_time		{ grid-area:	eff_time_spent; text-align: right;}
+		&_expected_yield{ grid-area:	expected_yield; text-align: right;}
+		&_actual_yield	{ grid-area:	actual_yield; 	text-align: right; }
+	
+	}
+
+}
+
+.sources_body { }
