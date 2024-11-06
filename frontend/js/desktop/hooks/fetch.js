@@ -23,7 +23,7 @@ function actilog_data() {
 		//  initialize alerts from server - manually, because the alerts from fetch_data would overwrite it otherwise
 		var old_alert_state = {...alert}; // continuing at the bottom
 
-		M.socket.execute('ACTILOG', 'get_actilog_data', {action: 'get_actilog_data'}, {return: true})
+		M.socket.execute('ACTILOG', 'get_actilog_data', {action: 'get_actilog_data'}, {return: true, timeout: 60})
 		.then(function(result) {
 
 			if(result.ok) {
